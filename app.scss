@@ -1,0 +1,41 @@
+@import "./css/reset.css";
+@import "./typography.scss";
+@mixin middle(){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+};
+@mixin mq($width){
+    @media screen and (max-width: $width){
+        @content;
+    }
+}
+
+$medium-width:920px;
+$narrow-width:350px;
+$primary-color:#ca774a;
+$body-font:"Jost";
+$body-font-size: 24px;
+
+body{
+    background-color:$primary-color;
+    color: #ffffff;
+    font-family: $body-font;
+    font-size: $body-font-size;
+    line-height: 1.5;
+    height:100vh;
+    @include middle;
+   
+}
+
+section{
+    width:500px;
+    @include mq($medium-width){
+        width:350px;
+        font-size:16px;
+    }
+    
+   p{
+    margin:24px 0 0 0;
+    }
+} 
